@@ -22,6 +22,7 @@ public class RetryTemplateConfig {
 		SimpleRetryPolicy retryPolicy = new SimpleRetryPolicy();
 		retryPolicy.setMaxAttempts(maxAttempts);
 		retryTemplate.setRetryPolicy(retryPolicy);
+		retryTemplate.registerListener(new CustomRetryListener());
 		return retryTemplate;
 	}
 
